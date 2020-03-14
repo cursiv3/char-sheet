@@ -1,6 +1,40 @@
+@import 'variables';
 
 .health {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
     font-size: 30px;
+    align-items: center;
+}
+
+.inputs {
+    display: flex;
+    flex-flow: row nowrap;
+
+    input {
+        width: 70%;
+        border: none;
+        border-radius: 3px;
+        box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.5);
+        padding: 5px;
+        text-align: center;
+        font-family: $sans;
+
+        &:focus {
+            outline: none;
+        }
+    }
+}
+
+.damageInput,
+.damageInput::placeholder {
+    text-shadow: 0 0 0 rgb(250, 136, 136);
+    font-weight: bold;
+}
+
+.healInput,
+.healInput::placeholder {
+    text-shadow: 0 0 0 rgb(28, 255, 28);
+    font-weight: bold;
 }

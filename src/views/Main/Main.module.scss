@@ -1,0 +1,13 @@
+@import 'variables';
+
+.container {
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+    padding: 20px;
+    background-color: rgb(53, 53, 59);
+    color: white;
+}
