@@ -1,25 +1,46 @@
 import React from 'react';
-import { CharacterCard, HealthCard } from 'components';
+import PropTypes from 'prop-types';
+
+import {
+    CharacterCard,
+    HealthCard,
+    StatCard,
+} from 'components';
 
 import styles from './Main.module.scss';
 
-const Main = () => (
-    <div className={styles.container}>
-        <div className={styles.header}>
+const Main = ({ stats, modifiers }) => (
+    <div className={ styles.container }>
+        <div className={ styles.header }>
             <CharacterCard
-                name={'Qip Hardtree'}
-                archetype={'Barbarian'}
-                level={4}
-                gender={'Male'}
-                race={'Human'}
+                name={ 'Qip Hardtree' }
+                archetype={ 'Barbarian' }
+                level={ 4 }
+                gender={ 'Male' }
+                race={ 'Human' }
             />
             <HealthCard
-                max={50}
-                current={50}
+                max={ 50 }
+                current={ 50 }
             />
+        </div>
+        <div className={ styles.modifierRow }>
+            { modifiers.map(stat => <StatCard key={ stat.stat } color={ 'blue' } { ...stat } />) }
+        </div>
+        <div className={ styles.stats }>
+            { stats.map(stat => <StatCard key={ stat.stat } color={ 'red' } { ...stat } />) }
         </div>
     </div>
 );
 
+Main.propTypes = {
+    stats: PropTypes.arrayOf(PropTypes.shape({})),
+    modifiers: PropTypes.arrayOf(PropTypes.shape({})),
+}
+
+Main.defaultProps = {
+    stats: [],
+    modifiers: []
+}
 
 export default Main;
