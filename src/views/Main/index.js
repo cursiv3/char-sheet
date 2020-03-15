@@ -19,16 +19,29 @@ const Main = ({ stats, modifiers }) => (
                 gender={ 'Male' }
                 race={ 'Human' }
             />
-            <HealthCard
-                max={ 50 }
-                current={ 50 }
-            />
+            <div>
+                <HealthCard
+                    max={ 50 }
+                    current={ 50 }
+                />
+            </div>
+            <div className={ styles.modifierRow }>
+                { modifiers.map(stat => <StatCard
+                    valueStyle={ styles.statValue }
+                    key={ stat.stat }
+                    color={ 'blue' }
+                    { ...stat }
+                />) }
+            </div>
         </div>
-        <div className={ styles.modifierRow }>
-            { modifiers.map(stat => <StatCard key={ stat.stat } color={ 'blue' } { ...stat } />) }
-        </div>
+
         <div className={ styles.stats }>
-            { stats.map(stat => <StatCard key={ stat.stat } color={ 'red' } { ...stat } />) }
+            { stats.map(stat => <StatCard
+                valueStyle={ styles.statValue }
+                key={ stat.stat }
+                color={ 'red' }
+                { ...stat }
+            />) }
         </div>
     </div>
 );

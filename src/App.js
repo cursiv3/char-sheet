@@ -36,7 +36,7 @@ const modifiers = [
     value: 17
   },
   {
-    stat: 'Hit Bonus',
+    stat: 'To Hit',
     value: 4,
   },
   {
@@ -45,7 +45,7 @@ const modifiers = [
   },
   {
     stat: 'Movement',
-    value: '30 Feet',
+    value: '30',
   },
 ]
 

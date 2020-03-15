@@ -1,24 +1,29 @@
 @import 'variables';
 
 .container {
-    display: inline-block;
-    border: 3px solid $main-color;
-    border-radius: 10px;
-    padding: 20px;
     text-align: center;
     font-family: $body1;
-    height: 90px;
+    word-break: break-word;
 }
 
-.primary {
-    font-size: 48px;
+.statWrapper {
+    border: 3px solid $main-color;
+    border-radius: 10px;
+    padding:10px 10px 20px;
 }
+
+.stat {
+    font-family: $sans;
+    font-weight: bold;
+}
+
 
 .bonus {
+    display: inline-block;
     position: relative;
-    border-radius: 500px;
+    top: -20px;
+    border-radius: 100%;
     border: 3px solid $secondary-color;
-    font-size: 28px;
     background-color: $background-color;
     padding: 5px;
 }
