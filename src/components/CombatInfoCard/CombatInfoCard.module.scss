@@ -1,0 +1,23 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 20px;
+    background-color: black;
+    color: white;
+}
+
+.stat {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: center;
+
+    hr {
+        width: 100%;
+    }
+}
+
+.value {
+    font-size: 28px;
+}
