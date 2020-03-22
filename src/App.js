@@ -30,7 +30,7 @@ const stats = [
 ];
 
 
-const modifiers = [
+const combatStats = [
   {
     stat: 'Armor Class',
     value: 17
@@ -64,7 +64,7 @@ function App() {
   return (<>
     <Main
       stats={ statsWithBonus }
-      modifiers={ modifiers }
+      combatStats={ combatStats }
     />
   </>
   );

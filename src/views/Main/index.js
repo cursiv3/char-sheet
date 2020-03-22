@@ -1,15 +1,18 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 
 import {
     CharacterCard,
     HealthCard,
     StatCard,
+    CombatInfoCard,
+    SavesSection
 } from 'components';
 
 import styles from './Main.module.scss';
 
-const Main = ({ stats, modifiers }) => (
+const Main = ({ stats, combatStats }) => (
     <div className={ styles.container }>
         <div className={ styles.header }>
             <CharacterCard
@@ -25,15 +28,8 @@ const Main = ({ stats, modifiers }) => (
                     current={ 50 }
                 />
             </div>
-            <div className={ styles.modifierRow }>
-                { modifiers.map(stat => <StatCard
-                    valueStyle={ styles.statValue }
-                    key={ stat.stat }
-                    color={ 'blue' }
-                    { ...stat }
-                />) }
-            </div>
         </div>
+        <CombatInfoCard combatStats={ combatStats } />
 
         <div className={ styles.stats }>
             { stats.map(stat => <StatCard
@@ -43,7 +39,10 @@ const Main = ({ stats, modifiers }) => (
                 { ...stat }
             />) }
         </div>
-    </div>
+        <div className={ styles.saves }>
+            <SavesSection />
+        </div>
+    </div >
 );
 
 Main.propTypes = {
